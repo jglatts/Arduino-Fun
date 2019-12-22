@@ -1,8 +1,8 @@
 #include <FastLED.h>
 
-#define NUM_LEDS   50
-#define DATA_PIN   3
-#define btnOne     4
+#define NUM_LEDS    50
+#define DATA_PIN    3
+#define btnOne      4
 #define Red         CRGB::Red    
 #define Black       CRGB::Black    
 #define White       CRGB::White
