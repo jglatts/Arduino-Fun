@@ -17,7 +17,6 @@ void setup() {
 }
 
 void lightPixel(int i, CRGB c) {
-  // i != value || i != check try and do something like this 
   if (i != value) {
     leds[i] = c;
     FastLED.show();
