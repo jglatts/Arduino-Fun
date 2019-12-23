@@ -1,8 +1,5 @@
 /*
   Implementing a 'LED-Chasing Game'
-  LEDS a little dim but it's looking nice
-  -------BUG-------
-  - when light is switching from white -> red, it looses the green color
 */
 #include "colors.h"
 
@@ -22,6 +19,7 @@ void lightPixel(int i, CRGB c) {
     FastLED.show();
     leds[i] = Black;
     FastLED.show();
+  delay(40);
   }
 }
 
@@ -38,7 +36,7 @@ void shutOffPixel() {
   }
 }
 
-void checkBtn(CRGB c) {	
+void checkBtn(CRGB c) {  
   idx = 0; // reset the iterator value
   while (digitalRead(btnOne) != LOW) {
     if (idx < NUM_LEDS) {
@@ -57,12 +55,20 @@ void bright() {
   while (digitalRead(btnOne) != LOW) {}
 }
 
+void checkIndices() {
+  Serial.print("First Index = ");
+  Serial.print(value);
+  Serial.print(", Second Index = ");
+  Serial.println(idx);
+  Serial.println((value == idx) ? "You've Won!!\n" : "You've Lost :(\n");
+}
+
 void loop() {
   checkBtn(Red);
   lightGamePixel();
   delay(4000);
   checkBtn(MediumAqua);
-  Serial.println((value == idx) ? "You've Won!!" : "You've Lost :(");
+  checkIndices();
   lightGamePixel();
   delay(4000);
 }
