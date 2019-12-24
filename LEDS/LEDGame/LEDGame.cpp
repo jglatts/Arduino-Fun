@@ -148,6 +148,5 @@ void LEDGame::lightSpeedPixel(int i, CRGB c) {
 void LEDGame::playSpeedGame() {
 	if (digitalRead(_btnOne) != HIGH) _speed -= 50;
 	lightSpeedPixel(_speedIdx, Cyan);
-	_speed = 300;
 	_speedIdx++;
 }
