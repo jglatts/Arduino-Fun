@@ -77,6 +77,7 @@ void LEDGame::bright() {
 		FastLED.show();
 	}
 	while (digitalRead(_btnOne) != LOW) {}
+	_speed = 300;
 }
 
 /**
@@ -146,7 +147,7 @@ void LEDGame::lightSpeedPixel(int i, CRGB c) {
  * Start the speed game
  */
 void LEDGame::playSpeedGame() {
-	if (digitalRead(_btnOne) != HIGH) _speed -= 50;
+	if (digitalRead(_btnOne) != HIGH) _speed -= 75;
 	lightSpeedPixel(_speedIdx, Cyan);
 	_speedIdx++;
 }
