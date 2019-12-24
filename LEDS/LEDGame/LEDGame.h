@@ -13,23 +13,10 @@
 
 #include "Arduino.h"
 #include "FastLED.h"
+#include "colors.h"
 
 #define NUM_LEDS    50
 #define DATA_PIN    3
-#define Red         CRGB::Red    
-#define Black       CRGB::Black    
-#define White       CRGB::White
-#define Green       CRGB::Green  
-#define Cyan        CRGB::LightCyan
-#define MediumAqua  CRGB::MediumAquamarine
-#define Aqua        CRGB::Aqua
-#define Blue        CRGB::Blue 
-#define BlueViolet  CRGB::BlueViolet 
-#define Coral       CRGB::Coral 
-#define Crimson     CRGB::Crimson 
-#define DarkGray    CRGB::DarkGray
-#define DarkGrenn   CRGB::DarkGreen 
-#define DarkMagenta CRGB::DarkMagenta
 
 class LEDGame {
 	private: 
@@ -40,15 +27,15 @@ class LEDGame {
 		LEDGame(int);
 		bool checkIndices();
 		void lightPixel(int, CRGB),
-			bright(),
-			shutOffPixel(),
-			lightGamePixel(),
-			checkBtn(CRGB),
-			resetValues(),
-			playChaseGame(),
-			playSpeedGame(),
-			lightSpeedPixel(int, CRGB),
-			turnOffPixel(int);
+ 			 bright(),
+			 shutOffPixel(),
+			 lightGamePixel(),
+			 checkBtn(CRGB),
+			 resetValues(),
+			 playChaseGame(),
+			 playSpeedGame(),
+			 lightSpeedPixel(int, CRGB),
+			 turnOffPixel(int);
 };
 
 #endif
